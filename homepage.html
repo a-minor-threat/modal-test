@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Home Page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+            rel="stylesheet">
+
+        <!-- Optional theme -->
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+            rel="stylesheet">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+            .modal-dialog {
+                width: 800px;
+            }
+            
+            .modal-header .close {
+                font-size: 40px; //bigger
+            }
+        </style>
+        <!--
+        <script>
+            $(document).ready(function () {
+                setTimeout(function () {
+
+                    $('#myModal').modal('show');
+
+                }, 2000);
+            });
+        </script>
+        -->
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <!--[if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <!-- Modal -->
+        <div aria-labelledby="myModalLabel" class="modal fade" id="myModal"
+            role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">We Want Your Feedback</h4>
+                    </div>
+                    <div class="modal-body">
+                        Would you like to take a survey? If you click "Yes", a survey will appear at the
+                        end of your visit.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal" type="button">No</button>
+                        <button class="btn btn-primary" data-dismiss = "modal" type="button" id="yesbtn">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>This is the home page.</p>
+        <a href="page2.html">This is a test link</a>
+		<script>
+        $(document).ready(function() {
+
+        	if ($.cookie('pop') === undefined) {
+                    $('#myModal').modal('show');
+                    console.log("showing because cookie doesn't exist");        		
+                } else {
+                	$('#myModal').modal('hide');
+                	console.log("cookie exists; hiding modal")
+                }
+
+            $("#yesbtn").click(function() {
+                if ($.cookie('pop') === undefined) {
+                    $.cookie('pop','1');
+                    console.log("show survey cookie set");
+  
+                } 
+            });
+            
+        });
+        </script>
+    </body>
+</html>
