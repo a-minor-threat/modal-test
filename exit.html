@@ -27,13 +27,13 @@
             $(document).ready(function () {
 
                 $(document).mousemove(function (e) {
-                    if (e.pageY <= 5) {
+                    if (e.pageY <= 1) {
                         if ($.cookie('shown')==undefined) {
                         if ($.cookie('pop') == '1') {
-                            console.log("showing modal because cookie exists");
+                            console.log("showing modal because pop cookie exists");
                             $('#myModal').modal('show');
                             $.cookie('shown','1');
-                            console.log("setting cookie after displays once");
+                            console.log("setting shown cookie after modal displays once");
                         }
                         }                        
                         //  else {
@@ -46,7 +46,7 @@
             });
         </script>
         <p>This is the exit page.</p>
-<a href="homepage.html">This is a test link</a>
+<a href="index.html">This is a test link</a>
 
 
 <div class="container">
